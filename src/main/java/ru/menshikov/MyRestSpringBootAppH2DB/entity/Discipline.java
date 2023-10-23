@@ -1,0 +1,46 @@
+package ru.menshikov.MyRestSpringBootAppH2DB.entity;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@NoArgsConstructor
+@Data
+@Setter
+@Getter
+@Entity
+@Table(name = "DISCIPLINES")
+public class Discipline {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "teacher")
+    private String teacher;
+
+    @Column(name = "faculty")
+    private String faculty;
+
+    @Column(name = "duration")
+    private int duration;
+
+    // public Student() {
+    //
+    //  }
+
+    public Discipline(String name, String teacher, String faculty, int duration) {
+        this.name = name;
+        this.teacher = teacher;
+        this.faculty = faculty;
+        this.duration = duration;
+    }
+}
+
